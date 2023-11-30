@@ -5,171 +5,180 @@
 let dayTotal = 0;
 const HALF_RATE = 20;
 const FULL_RATE = 35;
+const MONDAY = document.getElementById("monday");
+const TUESDAY = document.getElementById("tuesday");
+const WEDNESDAY = document.getElementById("wednesday");
+const THURSDAY = document.getElementById("thursday");
+const FRIDAY = document.getElementById("friday");
+const FULL = document.getElementById("full");
+const HALF = document.getElementById("half");
+const CALC_COST = document.getElementById('calculated-cost');
+const CLEAR = document.getElementById("clear-button");
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 
-document.getElementById("monday").onclick = function mondayChange()
+MONDAY.onclick = function mondayChange()
 {
-    if ( document.getElementById("monday").classList.contains('clicked') )
+    if ( MONDAY.classList.contains('clicked') )
     {
-        document.getElementById("monday").classList.remove('clicked');
+        MONDAY.classList.remove('clicked');
         dayTotal -= 1;
     }
     else
     {
-        document.getElementById("monday").classList.add('clicked');
+        MONDAY.classList.add('clicked');
         dayTotal += 1;
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
-document.getElementById("tuesday").onclick = function tuesdayChange()
+TUESDAY.onclick = function tuesdayChange()
 {
-    if ( document.getElementById("tuesday").classList.contains('clicked') )
+    if ( TUESDAY.classList.contains('clicked') )
     {
-        document.getElementById("tuesday").classList.remove('clicked');
+        TUESDAY.classList.remove('clicked');
         dayTotal -= 1;
     }
     else
     {
-        document.getElementById("tuesday").classList.add('clicked');
+        TUESDAY.classList.add('clicked');
         dayTotal += 1;
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
-document.getElementById("wednesday").onclick = function wednesdayChange()
+WEDNESDAY.onclick = function wednesdayChange()
 {
-    if ( document.getElementById("wednesday").classList.contains('clicked') )
+    if ( WEDNESDAY.classList.contains('clicked') )
     {
-        document.getElementById("wednesday").classList.remove('clicked');
+        WEDNESDAY.classList.remove('clicked');
         dayTotal -= 1;
     }
     else
     {
-        document.getElementById("wednesday").classList.add('clicked');
+        WEDNESDAY.classList.add('clicked');
         dayTotal += 1;
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
-document.getElementById("thursday").onclick = function thursdayChange()
+THURSDAY.onclick = function thursdayChange()
 {
-    if ( document.getElementById("thursday").classList.contains('clicked') )
+    if ( THURSDAY.classList.contains('clicked') )
     {
-        document.getElementById("thursday").classList.remove('clicked');
+        THURSDAY.classList.remove('clicked');
         dayTotal -= 1;
     }
     else
     {
-        document.getElementById("thursday").classList.add('clicked');
+        THURSDAY.classList.add('clicked');
         dayTotal += 1;
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
-document.getElementById("friday").onclick = function fridayChange()
+FRIDAY.onclick = function fridayChange()
 {
-    if ( document.getElementById("friday").classList.contains('clicked') )
+    if ( FRIDAY.classList.contains('clicked') )
     {
-        document.getElementById("friday").classList.remove('clicked');
+        FRIDAY.classList.remove('clicked');
         dayTotal -= 1;
     }
     else
     {
-        document.getElementById("friday").classList.add('clicked');
+        FRIDAY.classList.add('clicked');
         dayTotal += 1;
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
-document.getElementById("clear-button").onclick = function clearButton()
+CLEAR.onclick = function clearButton()
 {
-    document.getElementById("monday").classList.remove('clicked');
-    document.getElementById("tuesday").classList.remove('clicked');
-    document.getElementById("wednesday").classList.remove('clicked');
-    document.getElementById("thursday").classList.remove('clicked');
-    document.getElementById("friday").classList.remove('clicked');
+    MONDAY.classList.remove('clicked');
+    TUESDAY.classList.remove('clicked');
+    WEDNESDAY.classList.remove('clicked');
+    THURSDAY.classList.remove('clicked');
+    FRIDAY.classList.remove('clicked');
     dayTotal = 0;
-    document.getElementById('calculated-cost').textContent = 0;
+    CALC_COST.textContent = 0;
 };
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
-document.getElementById("half").onclick = function halfButton()
+HALF.onclick = function halfButton()
 {
-    if ( document.getElementById("half").classList.contains('clicked') )
+    if ( HALF.classList.contains('clicked') )
     {
-        document.getElementById("half").classList.remove('clicked');
-        document.getElementById("full").classList.add('clicked');
+        HALF.classList.remove('clicked');
+        FULL.classList.add('clicked');
     }
     else
     {
-        document.getElementById("half").classList.add('clicked');
-        document.getElementById("full").classList.remove('clicked');
+        HALF.classList.add('clicked');
+        FULL.classList.remove('clicked');
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
-document.getElementById("full").onclick = function fullButton()
+FULL.onclick = function fullButton()
 {
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById("full").classList.remove('clicked');
-        document.getElementById("half").classList.add('clicked');
+        FULL.classList.remove('clicked');
+        HALF.classList.add('clicked');
     }
     else
     {
-        document.getElementById("full").classList.add('clicked');
-        document.getElementById("half").classList.remove('clicked');
+        FULL.classList.add('clicked');
+        HALF.classList.remove('clicked');
     }
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -178,14 +187,14 @@ document.getElementById("full").onclick = function fullButton()
 
 window.onload = function calculate()
 {
-let costLabel = document.getElementById("calculated-cost").textContent;
+let costLabel = CALC_COST.textContent;
     console.log(costLabel);
-    if ( document.getElementById("full").classList.contains('clicked') )
+    if ( FULL.classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
+        CALC_COST.textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
+        CALC_COST.textContent = dayTotal * HALF_RATE;
     }
 };
-/*Taylor Crowe CPRG-213F 000612584 Nov 29 2023*/
+/*Taylor Crowe CPRG-213F 000612584 Nov 30 2023*/
