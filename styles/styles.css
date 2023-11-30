@@ -26,7 +26,7 @@ body {
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
 .flex {
     display: flex;
-    justify-content: center;
+
 }
 
 /************* site-wide text styling *************/
@@ -229,6 +229,11 @@ li {
     height: 420px;
     align-items: center;
     text-align: center;
+    justify-content: center;
+}
+
+.contact .flex {
+    justify-content: center;
 }
 
 label {
