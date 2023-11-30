@@ -3,8 +3,8 @@
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
 let dayTotal = 0;
-
-
+const HALF_RATE = 20;
+const FULL_RATE = 35;
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -24,10 +24,10 @@ document.getElementById("monday").onclick = function mondayChange()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -45,10 +45,10 @@ document.getElementById("tuesday").onclick = function tuesdayChange()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -66,10 +66,10 @@ document.getElementById("wednesday").onclick = function wednesdayChange()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -87,10 +87,10 @@ document.getElementById("thursday").onclick = function thursdayChange()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -108,10 +108,10 @@ document.getElementById("friday").onclick = function fridayChange()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -144,10 +144,10 @@ document.getElementById("half").onclick = function halfButton()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -166,10 +166,10 @@ document.getElementById("full").onclick = function fullButton()
     }
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 
@@ -182,10 +182,10 @@ let costLabel = document.getElementById("calculated-cost").textContent;
     console.log(costLabel);
     if ( document.getElementById("full").classList.contains('clicked') )
     {
-        document.getElementById('calculated-cost').textContent = dayTotal * 35;
+        document.getElementById('calculated-cost').textContent = dayTotal * FULL_RATE;
     }
     else{
-        document.getElementById('calculated-cost').textContent = dayTotal * 20;
+        document.getElementById('calculated-cost').textContent = dayTotal * HALF_RATE;
     }
 };
 /*Taylor Crowe CPRG-213F 000612584 Nov 29 2023*/
